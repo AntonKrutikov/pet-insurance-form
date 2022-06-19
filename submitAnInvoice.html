@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/2f70a2f846.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="preload">
+    <nav>
+        <div class="first-row">
+            <div class="container">
+                <div class="d-none d-sm-flex justify-content-end">
+                    <p class="mb-0 pe-3">
+                        Available 24/7: <a href="pool">Call 866.615.0126</a> or <a href="pool">Chat</a>  
+                    </p>
+                    <div class="sign-out ps-3 border-start">
+                        Sign Out <a href="#"><i class="far fa-sign-out"></i></a> 
+                    </div>
+                </div>
+                <div class="row d-flex d-sm-none">
+                    <div class="col-6">
+                        We're available 24/7
+                    </div>
+                    <div class="col-6 text-end">
+                        Call <a href="tel:8772522473">877.252.2473</a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="second-row">
+            <div class="container">
+                <div class="row d-flex">
+                    <div class="col-10 col-md-3 pt-4 pb-4">
+                        <div class="logo">
+                            <img src="img/logo.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-9 mobile-nav" id="navMenu">
+                        <div class="container">
+                            <div class="close d-md-none">
+                                <div id="closeMenu" onclick="closeMenu()">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                            </div>
+                            <ul class="navbar-items">
+                                <div class="menu-logo d-block d-md-none">
+                                    <img src="img/logo.jpg" alt="">
+                                </div>
+                                <li>
+                                    <a href="pool" class="selected">Overview</a>
+                                </li>
+                                <li>
+                                    <a href="pool">Profile</a>
+                                </li>
+                                <li>
+                                    <a href="pool">Coverage</a>
+                                </li>
+                                <li>
+                                    <a href="pool">Claims</a>
+                                </li>
+                                <li>
+                                    <a href="pool">Support</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-2 col-md-3 d-flex align-items-center justify-content-end">
+                        
+                        <div id="openMenu" class="menu-bars d-md-none" onclick="openMenu()">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 col-md-8 col-xl-5">
+                    <div class="stepper-wrapper">
+                        <div class="stepper-item active">
+                            <div class="step-counter">1</div>
+                            <div class="step-name">Enter Details</div>
+                        </div>
+                        <div class="stepper-item">
+                            <div class="step-counter">2</div>
+                            <div class="step-name">Upload invoice</div>
+                        </div>
+                        <div class="stepper-item">
+                            <div class="step-counter">3</div>
+                            <div class="step-name">Review & submit</div>
+                        </div>
+                    </div>
+
+                    <section class="form-tab">
+                        <div class="entry-text">
+                            <div class="row d-flex justify-content-between">
+                                <div class="col-12 mb-2 mb-md-0">
+                                    <h3>
+                                        Submit an Invoice
+                                    </h3>
+                                    <p>
+                                        *Fields are required
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <form id="details">
+                            <div class="mb-4">
+                              <label for="petClaimFor" class="form-label">Which pet is this claim for?*</label>
+                              <div class="dropdown dropdown-select mt-2 mb-2" id="selectPet">
+                                  <button class="btn dropdown-toggle" type="button" id="selectPetBtn" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,4">
+                                    Please select pet
+                                  </button>
+                                  <ul class="dropdown-menu" aria-labelledby="selectPetBtn">
+                                    <li><a class="dropdown-item" href="#">Please select pet</a></li>
+                                    <li><a class="dropdown-item" href="#" data-value="Kenny">Kenny</a></li>
+                                    <li><a class="dropdown-item" href="#" data-value="Princess Bellatrix">Princess Bellatrix</a></li>
+                                  </ul>
+                              </div>
+                            </div>
+
+                            <div class="mb-4">
+                              <label for="reasonForPetVisit" class="form-label">What was the reason for your pet's visit? Please be specific.*</label>
+                              <textarea class="form-control" id="reasonForPetVisit" rows="3"></textarea>
+                            </div>
+                            
+
+                            <div class="mb-4">
+                                <label for="">
+                                    Have you submitted an invoice for this condition before?*
+                                </label>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label class="label-block">
+                                            <input name="submittedAnInvoiceBefore" type="radio" value="Yes" id="submittedAnInvoiceBeforeYes"/>
+                                            <span>
+                                                Yes
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="label-block">
+                                            <input name="submittedAnInvoiceBefore" type="radio" value="No" id="submittedAnInvoiceBeforeNo"/>
+                                            <span>
+                                                No
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4" id="showBlock1" style="display: none;">
+                              <label for="petFirstShowSignsOfCondition" class="form-label">When did Kenny first show signs of this condition?</label>
+                              <input class="form-control" type="date" id="petFirstShowSignsOfCondition" value="">
+                            </div>
+
+
+
+
+
+
+                            <div class="mb-4">
+                                <label for="" style="display: flex; justify-content:space-between;align-items: center;">
+                                    <span>
+                                        How should we pay the claim? 
+                                    </span>
+                                    <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title='Not sure what to choose?<br><br>Select "pay me" if you already paid your bill.
+
+                                        If you haven&#39;t paid your full bill and your hospital accepts direct payment, choose "pay my veterinarian" and we&#39;ll pay your hospital directly.'></i>
+                                </label>
+                                <div class="row">
+                                    <div class="col-6 mb-3">
+                                        <label class="label-block">
+                                            <input name="payTheClaimBy" type="radio" value="payMe"/>
+                                            <span>
+                                                Pay me
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <label class="label-block">
+                                            <input name="payTheClaimBy" type="radio" value="payMyVeterinarian"/>
+                                            <span>
+                                                Pay my veterinarian
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div>
+                                <label for="">
+                                    Has Kenny ever been insured with another pet health insurance provider?
+                                </label>
+                                <div class="row">
+                                    <div class="col-6 mb-3">
+                                        <label class="label-block">
+                                            <input name="anotherPetHealthInsurance" type="radio" value="Yes" id="anotherPetHealthInsuranceYes"/>
+                                            <span>
+                                                Yes
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <label class="label-block">
+                                            <input name="anotherPetHealthInsurance" type="radio" value="No" id="anotherPetHealthInsuranceNo"/>
+                                            <span>
+                                                No
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4" id="showBlock2">
+                                <p>
+                                    To make sure we're processing your invoice accurately, please list the provider. If you don't have a policy with them anymore, please select the date your policy was cancelled.*
+                                </p>
+                                <div id="providers">
+                                </div>
+                                <script src="http://www.datejs.com/build/date.js" type="text/javascript"></script>
+                                
+
+                                <a href="#a" class="text-decoration-none mt-2 mb-3" id="addProviderBtn" style="display: block;">
+                                    <span class="fa-stack" style="font-size: .8em;margin-top: -3px;">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+                                    </span> Add a provider
+                                </a>
+
+                              
+                                <p id="values"></p>
+
+                                <div id="providerContainer" style="display: none;">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="">
+                                                Provider name
+                                            </label>
+                                            <input class="form-control" type="text" id="providerName" placeholder="Full name">
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="">
+                                                Coverage end date
+                                            </label>
+                                            <input class="form-control" type="date" id="coverageEndDate" value="">
+                                        </div>
+                                    </div>
+                                    <a href="#a" class="btn primary disabled" id="saveProvider">Save</a>
+                                    <a href="#a" class="text-decoration-none ms-3" id="closeProvider">Cancel</a>
+                                </div>
+                            </div>
+                            <p>
+                                It looks like this is your first claim. Because of this, we'll need a little more information about Kenny. Please confirm the details below
+                            </p>
+                            <br>
+                            <div class="mb-4">
+                                <label for="">  
+                                    Approximate date of birth*
+                                </label>
+                                <input class="form-control" type="date" id="approximateDateOfBirth" value="">
+                            </div>
+                            <div class="mb-4">
+                                <label for="">
+                                    Approximate date of adoption*
+                                </label>
+                                <input class="form-control" type="date" id="approximateDateOfAdoption" value="">
+                            </div>
+
+
+
+
+                            <div>
+                                <label for="">
+                                    Is Kenny neutered?*
+                                </label>
+                                <div class="row">
+                                    <div class="col-6 mb-3">
+                                        <label class="label-block">
+                                            <input name="isPetNeutered" type="radio" id="isPetNeuteredYes" value="Yes" />
+                                            <span>
+                                                Yes
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <label class="label-block">
+                                            <input name="isPetNeutered" type="radio" id="isPetNeuteredNo" value="No" />
+                                            <span>
+                                                No
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="mb-4" id="showBlock3" style="display: none;">
+                                <label for="">
+                                    Approximate date of neuter*
+                                </label>
+                                <input class="form-control" type="date" id="approximateDateOfNeuter" placeholder="Select a date">
+                            </div>
+
+
+                            <div class="mb-4">
+                                <label for="">
+                                    Which veterinary hospital(s) has Kenny been to?
+                                </label>
+
+
+                                <div id="hospitals">
+                                </div>
+
+
+                                <a href="#a" class="text-decoration-none mt-2 mb-3" id="addHospitalBtn" style="display: block;">
+                                    <span class="fa-stack" style="font-size: .8em;margin-top: -3px;">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+                                    </span> Add a hospital
+                                </a>
+
+
+                                <div id="hospitalContainer" style="display: none;">
+                                    <input class="form-control" type="text" id="approximateDateOfNeuter" placeholder="Search by zip code">
+    
+                                    <div class="dropdown dropdown-select mt-2 mb-2">
+                                        <button class="btn dropdown-toggle" type="button" id="selectHospitalBtn" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,4">
+                                            Select a hospital
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="selectHospitalBtn">
+                                            <li><a class="dropdown-item" href="#" >Select a hospital</a></li>
+                                            <li><a class="dropdown-item" href="#" >Hospital 1</a></li>
+                                            <li><a class="dropdown-item" href="#" >Hospital 2</a></li>
+                                            <li><a class="dropdown-item" href="#" >Hospital 3</a></li>
+                                        </ul>
+                                    </div>
+                                    <a href="#a" class="btn primary disabled" id="saveHospital">Save</a>
+                                    <a href="#a" class="text-decoration-none ms-3" id="closeHospital">Cancel</a>
+                                </div>
+                            </div>
+
+
+
+                            <a href="" type="submit" class="btn primary w-100">Next</a>
+                            <button type="submit" class="btn secondary w-100 mt-2">Back</button>
+                          </form>
+                    </section>
+
+                    <section class="form-tab">
+                        <div class="entry-text">
+                            <div class="row d-flex justify-content-between">
+                                <div class="col-12 mb-2 mb-md-0">
+                                    
+                                    
+                                    <h3>
+                                        Submit an Invoice
+                                    </h3>
+                                    <p>
+                                        *Fields are required
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <form id="invoice">
+                            <div class="files" id="files1">
+                                <div class="fileList"></div>
+                                <h3>
+                                    Upload your invoice
+                                </h3>
+                                <br>
+                                <span class="btn btn-default btn-file">
+                                    <span>
+                                        <i class="fas fa-upload fa-2x mb-3"></i> <br>
+                                        Drag and drop up to 10 files    <br>
+                                        <span style="font-size: .8em;margin: 10px 0;display: block;">OR</span> 
+                                        <a href="#a" class="btn primary">Browse</a>
+                                    </span>
+                                    <input type="file" name="files1" multiple />
+                                </span>
+                                <br />
+                                <p>
+                                    Here are some tips to make sure your invoice is processed quickly:
+                                </p>
+                                <ul>
+                                    <li>
+                                        Upload the full invoice, including all pages
+                                    </li>
+                                    <li>
+                                        Make sure the invoice shows your pet's name, the date, and all charges
+                                    </li>
+                                    <li>
+                                        Show proof of payment (unless you are submitting an estimate)
+                                    </li>
+                                </ul>
+                                <p>
+                                    Maximum upload size: 10 MB per file, 40 MB total.   <br>
+                                    Accepted file types: JPG, PNG, TIFF or PDF.  
+                                </p>
+                            </div>
+
+                            <br>
+                            <br>
+
+                            <a href="" type="submit" class="btn primary w-100">Next</a>
+                            <button type="back" class="btn secondary w-100 mt-2">Back</button>
+                          </form>
+                    </section>
+
+                    <section class="form-tab">
+                        <div class="entry-text">
+                            <div class="row d-flex justify-content-between">
+                                <div class="col-12 mb-2 mb-md-0">
+                                    
+                                    <h3>
+                                        Submit an Invoice
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <form id="review">
+                                <h3>
+                                    Review your claim details
+                                </h3>
+                                <br>
+                                <p>
+                                    <strong>Pet:</strong> Kenny <br>
+                                    <strong>Reason for visit:</strong> Reason for visit: Ear infection<br>
+                                    <strong>Claim payment:</strong> Pay my veterinarian <br>
+                                    <strong>Invoice:</strong> <a href="#" id="showInvoicePdfModal" data-bs-toggle="modal" data-bs-target="#invoicePdfModal">2021-02-13-invoice.pdf</a>
+                                </p>
+                                <div class="disclaimer">
+                                    Submission of this claim form authorizes all veterinarians from which your pet has received treatment to provide us with a copy of your pet's
+                                    medical records and confirms all information provided is true and accurate to the best of your knowledge and belief. 
+                                    <br><br>
+                                    For your protection, insurance laws require the following to appear on this form: Any person who knowingly presents a false or fraudulent claim for the payment of a loss is guilty of a crime and may be subject to fines and confinement in prison.
+                                    <br><br>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="disclaimerAgree">
+                                        <label class="form-check-label" for="disclaimerAgree" style="font-weight: 400;font-size: 1em;">
+                                            I agree to these terms*
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                                <div class="modal fade" id="invoicePdfModal">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <iframe style="width: 100%; aspect-ratio: 3/4;"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                  
+
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h3 id="exampleModalLabel">We received your invoice</h3>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Thanks for submitting your invoice. Please allow at least 24 hours for it to appear in your account. We'll reach out to you directly if we need anything else.
+                                            </p>
+                                            <h4>
+                                                Get text updates
+                                            </h4>
+                                            <p>
+                                                If you'd like to receive text updates about your claim please choose a mobile number below. By selecting your mobile number, you agree to receive texts about your membership. <a href="#">Learn more</a>
+                                            </p>
+                                            <h5>
+                                                Mobile number
+                                            </h5>
+                                            <div class="dropdown dropdown-select mt-2 mb-2">
+                                                <button class="btn dropdown-toggle" type="button" id="mobileNumberBtn" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,4">
+                                                    - Select -
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="mobileNumberBtn">
+                                                    <li><a class="dropdown-item" href="#a" onclick="mobileNumber(this);">(206) 505-1412</a></li>
+                                                    <li><a class="dropdown-item" href="#a" onclick="mobileNumber(this);">(206) 342-2331</a></li>
+                                                    <li><a class="dropdown-item" href="#a" onclick="mobileNumber(this);">Don't send text updates</a></li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="d-block mt-2">Don't see your preferred mobile number?</a>
+                                        </div>
+                                        <div class="modal-footer d-block">
+                                            <div class="row justify-content-center">
+                                                <div class="col-12">
+                                                    <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal" aria-label="Close">OK</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <br>
+
+                            <a href="#" type="submit" class="btn primary w-100">Next</a>
+                            <button type="back" class="btn secondary w-100 mt-2">Back</button>
+                          </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="first-row">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10">  
+                        <div class="row">
+                            <div class="col-12 col-md-4 mb-4">
+                                <a href="poool" class="btn secondary w-100">Yours account</a>
+                                <br>
+                                <br>
+                                <a href="poool" class="btn secondary w-100">Send a veterinary bill</a>
+                            </div>
+                            
+                            <div class="col-12 col-md-2">
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <ul class="footer-links">
+                                    <li>
+                                        <a href="pool">
+                                            About Us
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="pool">
+                                            For Investors
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="pool">
+                                            Support
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <ul class="footer-links">
+                                    <li>
+                                        <a href="pool">
+                                            Media Room
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="pool">
+                                            Terms of Service
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="pool">
+                                            Privacy Policy
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="second-row">
+            <div class="container">
+                <p>
+                    IMPORTANT NOTICE: This Trupanion policy is sold and administered by Trupanion Managers USA, Inc. (“TMUI”) (licenses available at <a href="https://trupanion.com/site/terms-of-use">https://trupanion.com/site/terms-of-use</a> ) and underwritten by American Pet Insurance Company (“APIC”), with its main office at 6100 4th Ave S, Seattle, WA 98108. Aflac Benefits Advisors, Inc. (d/b/a Aflac Insurance Solutions), a subsidiary of Aflac Incorporated and a licensed insurance producer (NPN 16512385) (California License #0H86831), has limited authority to advertise this Trupanion policy, does not intend to sell, solicit, or negotiate this Trupanion policy on behalf of APIC, will not administer this Trupanion policy on behalf of APIC, and does not have authority to bind coverage on behalf of APIC. Aflac Benefits Advisors, Inc. may receive marketing fees or other compensation from TMUI for insurance policies sold by TMUI. TMUI, APIC, and their affiliates are separate, independent of, and distinct from Aflac Incorporated, Aflac Benefits Advisors, Inc., and their affiliates.
+                </p>
+                <br>
+                <p>
+                    Underwritten by American Pet Insurance Company
+                    <br>
+                    © 2021 Trupanion. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js" integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/main.js"></script>
+<script src="js/fileUpload.js"></script>
+</html>
